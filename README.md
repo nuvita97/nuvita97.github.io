@@ -1,3 +1,5 @@
 # MY PERSONAL WEBSITE
 
-## Editing...
+- About me
+- My Profile
+- My Projects
