@@ -4198,7 +4198,7 @@ input, select, textarea {
 			-webkit-flex-shrink: 1;
 			-ms-flex-shrink: 1;
 			flex-shrink: 1;
-			padding: 4rem 4rem 2rem 4rem ;
+			padding: 2rem 4rem 2rem 4rem ;
 			border-left: solid 2px #e2e2e2;
 		}
 
@@ -4219,17 +4219,17 @@ input, select, textarea {
 			}
 
 				#footer > section.split > section {
-					padding: 3rem 4rem 1rem 4rem ;
+					padding: 2rem 4rem 2rem 4rem ;
 					border-top: solid 2px #e2e2e2;
 				}
 
 					#footer > section.split > section:first-child {
-						padding: 5rem 4rem 1rem 4rem ;
+						padding: 2rem 4rem 2rem 4rem ;
 						border-top: 0;
 					}
 
 					#footer > section.split > section:last-child {
-						padding: 3rem 4rem 3rem 4rem ;
+						padding: 2rem 4rem 2rem 4rem ;
 					}
 
 				#footer > section.split.contact > section {
@@ -4241,7 +4241,7 @@ input, select, textarea {
 					-webkit-align-items: center;
 					-ms-align-items: center;
 					align-items: center;
-					padding: 3.15rem 4rem;
+					padding: 2rem 4rem;
 				}
 
 					#footer > section.split.contact > section > * {
@@ -4272,11 +4272,11 @@ input, select, textarea {
 					}
 
 					#footer > section.split.contact > section:first-child {
-						padding: 4rem 4rem 3rem 4rem;
+						padding: 2rem 4rem 2rem 4rem;
 					}
 
 					#footer > section.split.contact > section:last-child {
-						padding: 3rem 4rem 4rem 4rem;
+						padding: 2rem 4rem 2rem 4rem;
 					}
 
 					#footer > section.split.contact > section.alt {
@@ -4287,7 +4287,7 @@ input, select, textarea {
 					}
 
 						#footer > section.split.contact > section.alt > :last-child {
-							margin-top: -0.325rem;
+							margin-top: 0rem;
 						}
 
 		#footer form label,
@@ -4311,27 +4311,27 @@ input, select, textarea {
 					}
 
 					#footer > section.split > section {
-						padding: 4rem 4rem 2rem 4rem ;
+						padding: 2rem 4rem 2rem 4rem ;
 					}
 
 						#footer > section.split > section:first-child {
-							padding: 4rem 4rem 2rem 4rem ;
+							padding: 2rem 4rem 2rem 4rem ;
 						}
 
 						#footer > section.split > section:last-child {
-							padding: 4rem 4rem 2rem 4rem ;
+							padding: 2rem 4rem 2rem 4rem ;
 						}
 
 					#footer > section.split.contact > section {
-						padding: 4rem;
+						padding: 2rem;
 					}
 
 						#footer > section.split.contact > section:first-child {
-							padding: 4rem;
+							padding: 2rem;
 						}
 
 						#footer > section.split.contact > section:last-child {
-							padding: 4rem;
+							padding: 2rem;
 						}
 
 				#footer form label,
@@ -4345,19 +4345,19 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#footer > section {
-				padding: 2rem 2rem 0.1rem 2rem ;
+				padding: 2rem 2rem 2rem 2rem ;
 			}
 
 				#footer > section.split > section {
-					padding: 2rem 2rem 0.1rem 2rem ;
+					padding: 2rem 2rem 2rem 2rem ;
 				}
 
 					#footer > section.split > section:first-child {
-						padding: 2rem 2rem 0.1rem 2rem ;
+						padding: 2rem 2rem 2rem 2rem ;
 					}
 
 					#footer > section.split > section:last-child {
-						padding: 2rem 2rem 0.1rem 2rem ;
+						padding: 2rem 2rem 2rem 2rem ;
 					}
 
 				#footer > section.split.contact > section {
@@ -4692,6 +4692,8 @@ input, select, textarea {
 
 
 	.slider{
+		max-width: 100%;
+    	max-height: 100%;
 		width: 600px;
 		height: 750px;
 		border-radius: 10px;
@@ -4716,6 +4718,8 @@ input, select, textarea {
 	}
 
 	.slide img{
+		/* max-width: 100%;
+    	max-height: 100%; */
 		width: 600px;
 		height: 750px;
 	}
@@ -4723,6 +4727,8 @@ input, select, textarea {
 	/*css for manual slide navigation*/
 
 	.navigation-manual{
+		max-width: 100%;
+    	max-height: 100%;
 		position: absolute;
 		width: 600px;
 		margin-top: 200px;
@@ -4769,6 +4775,8 @@ input, select, textarea {
 	/*css for automatic navigation*/
 
 	.navigation-auto{
+		max-width: 100%;
+    	max-height: 100%;
 		position: absolute;
 		display: flex;
 		width: 600px;
