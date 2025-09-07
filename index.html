@@ -26,10 +26,10 @@
 
 				<!-- Intro -->
 				<div id="intro">
-					<h1>Hello I am <br> Viet-Thai Nguyen</h1>
-					<p><h3>A 🇻🇳 Data Engineer in 🇫🇷</h3></p>
+					<h1 data-en="Hello I am <br> Viet-Thai Nguyen" data-fr="Bonjour je suis <br> Viet-Thai Nguyen" data-vi="Xin chào tôi là <br> Viet-Thai Nguyen">Hello I am <br> Viet-Thai Nguyen</h1>
+					<p><h3 data-en="A 🇻🇳 Data Engineer in 🇫🇷" data-fr="Un 🇻🇳 Ingénieur Data en 🇫🇷" data-vi="Một 🇻🇳 Kỹ sư Dữ liệu tại 🇫🇷">A 🇻🇳 Data Engineer in 🇫🇷</h3></p>
 					<ul class="actions">
-						<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly" data-en="Continue" data-fr="Continuer" data-vi="Tiếp tục">Continue</a></li>
 					</ul>
 				</div>
 
@@ -42,15 +42,22 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li class="active"><a href="index.html">About me</a></li>
-							<li><a href="profile.html">Profile</a></li>
-							<li><a href="projects.html">Projects</a></li>
-							<li><a href="gallery.html">Gallery</a></li>
+							<li class="active"><a href="index.html" data-en="About me" data-fr="À propos" data-vi="Giới thiệu">About me</a></li>
+							<li><a href="profile.html" data-en="Profile" data-fr="Profil" data-vi="Hồ sơ">Profile</a></li>
+							<li><a href="projects.html" data-en="Projects" data-fr="Projets" data-vi="Dự án">Projects</a></li>
+							<li><a href="gallery.html" data-en="Gallery" data-fr="Galerie" data-vi="Thư viện ảnh">Gallery</a></li>
 						</ul>
 						<ul class="icons">
 							<li><a href="https://github.com/nuvita97" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
 							<li><a href="https://www.linkedin.com/in/vietthai2303" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">Linkedin</span></a></li>
 							<li><a href="https://www.instagram.com/nuvitaaaaaa" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+							<li class="language-selector">
+								<select id="language-select" onchange="changeLanguage()">
+									<option value="en" selected>English</option>
+									<option value="fr">Français</option>
+									<option value="vi">Tiếng Việt</option>
+								</select>
+							</li>
 						</ul>
 					</nav>
 
@@ -59,13 +66,12 @@
 
 					<!-- Posts -->
 					<section>
-													
-						<p>	Welcome to my personal website!</p> 
-						<p> I am <strong>Thai</strong>, people often call me <strong>Ted</strong>. I come from Ho Chi Minh City, Vietnam. I am now a <strong>Data Engineer</strong> in Paris, France.</p>
-						<p> 📚In 2019, I accomplished my Bachelor Degree in <strong>Aerospace Engineering</strong> at the <em>University of Technology - Vietnam National University</em>. Then in February 2023, I decided to take a Master's in <strong>Computer Science</strong> at <em>EPITA - École d'Ingénieurs en Informatique</em> in France. Having always been interested in programming, software, and technology, I have continuously worked hard to deepen my knowledge and experience in big data, software development, and machine learning ever since. More info about me could be found in <code><a href="profile.html">Profile</a></code> page. </p>
-						<p>	✈️ From an aviation engineer, I made a decision to switch into the Data Science & Engineering field. My most recent job has been a <strong>Data Engineer/Software Developer</strong> for <em>AIRBUS Skywise</em> project where I can help the company build excellent data applications, access and leverage the massive data source, and optimize operating processes with new software and technologies. Besides, I am self-taught in Machine Learning, Deep Learning, especially in NLP and MLOps by exploring some personal projects that you can find in <code><a href="projects.html">Projects</a></code> on this site! </p>
-						<p>	📸 Apart from academic pursuit, I love Arsenal, League of Legends, Pokémon, travelling, and running, yet my biggest passion has always been <strong>photography</strong> which you can have a look at my <code><a href="gallery.html">Gallery</a></code>. Experience plays a pivotal role in my philosophy, so I am constantly learning everything that makes me interested. </p>
-						<p> Thank you for your time. Hope you have a good day!</p>
+						<p data-en="Welcome to my personal website!" data-fr="Bienvenue sur mon site web personnel !" data-vi="Chào mừng đến với trang web cá nhân của tôi!">Welcome to my personal website!</p> 
+						<p data-en="I am <strong>Thai</strong>, people often call me <strong>Ted</strong>. I come from Ho Chi Minh City, Vietnam. I am now a <strong>Data Engineer</strong> in Paris, France." data-fr="Je suis <strong>Thai</strong>, les gens m'appellent souvent <strong>Ted</strong>. Je viens de Ho Chi Minh Ville, Vietnam. Je suis maintenant <strong>Ingénieur Data</strong> à Paris, France." data-vi="Tôi là <strong>Thai</strong>, mọi người thường gọi tôi là <strong>Ted</strong>. Tôi đến từ Thành phố Hồ Chí Minh, Việt Nam. Hiện tại tôi là <strong>Kỹ sư Dữ liệu</strong> tại Paris, Pháp.">I am <strong>Thai</strong>, people often call me <strong>Ted</strong>. I come from Ho Chi Minh City, Vietnam. I am now a <strong>Data Engineer</strong> in Paris, France.</p>
+						<p data-en="📚In 2019, I accomplished my Bachelor Degree in <strong>Aerospace Engineering</strong> at the <em>University of Technology - Vietnam National University</em>. Then in February 2023, I decided to take a Master's in <strong>Computer Science</strong> at <em>EPITA - École d'Ingénieurs en Informatique</em> in France. Having always been interested in programming, software, and technology, I have continuously worked hard to deepen my knowledge and experience in big data, software development, and machine learning ever since. More info about me could be found in <code><a href='profile.html'>Profile</a></code> page." data-fr="📚En 2019, j'ai obtenu mon diplôme de licence en <strong>Génie Aérospatial</strong> à l'<em>Université de Technologie - Université Nationale du Vietnam</em>. Puis en février 2023, j'ai décidé de faire un Master en <strong>Informatique</strong> à <em>EPITA - École d'Ingénieurs en Informatique</em> en France. Ayant toujours été intéressé par la programmation, les logiciels et la technologie, j'ai continuellement travaillé dur pour approfondir mes connaissances et mon expérience en big data, développement logiciel et apprentissage automatique depuis lors. Plus d'informations sur moi peuvent être trouvées dans la page <code><a href='profile.html'>Profil</a></code>." data-vi="📚Năm 2019, tôi đã hoàn thành bằng Cử nhân <strong>Kỹ thuật Hàng không</strong> tại <em>Đại học Bách khoa - Đại học Quốc gia Việt Nam</em>. Sau đó vào tháng 2 năm 2023, tôi quyết định học Thạc sĩ <strong>Khoa học Máy tính</strong> tại <em>EPITA - École d'Ingénieurs en Informatique</em> ở Pháp. Luôn quan tâm đến lập trình, phần mềm và công nghệ, tôi đã liên tục nỗ lực để nâng cao kiến thức và kinh nghiệm về big data, phát triển phần mềm và machine learning. Thông tin thêm về tôi có thể tìm thấy trong trang <code><a href='profile.html'>Hồ sơ</a></code>.">📚In 2019, I accomplished my Bachelor Degree in <strong>Aerospace Engineering</strong> at the <em>University of Technology - Vietnam National University</em>. Then in February 2023, I decided to take a Master's in <strong>Computer Science</strong> at <em>EPITA - École d'Ingénieurs en Informatique</em> in France. Having always been interested in programming, software, and technology, I have continuously worked hard to deepen my knowledge and experience in big data, software development, and machine learning ever since. More info about me could be found in <code><a href="profile.html">Profile</a></code> page.</p>
+						<p data-en="✈️ From an aviation engineer, I made a decision to switch into the Data Science & Engineering field. My most recent job has been a <strong>Data Engineer/Software Developer</strong> for <em>AIRBUS Skywise</em> project where I can help the company build excellent data applications, access and leverage the massive data source, and optimize operating processes with new software and technologies. Besides, I am self-taught in Machine Learning, Deep Learning, especially in NLP and MLOps by exploring some personal projects that you can find in <code><a href='projects.html'>Projects</a></code> on this site!" data-fr="✈️ D'ingénieur aéronautique, j'ai pris la décision de me tourner vers le domaine de la Science des Données et de l'Ingénierie. Mon emploi le plus récent a été <strong>Ingénieur Data/Développeur Logiciel</strong> pour le projet <em>AIRBUS Skywise</em> où je peux aider l'entreprise à construire d'excellentes applications de données, accéder et exploiter la source de données massive, et optimiser les processus opérationnels avec de nouveaux logiciels et technologies. De plus, je suis autodidacte en Machine Learning, Deep Learning, surtout en NLP et MLOps en explorant quelques projets personnels que vous pouvez trouver dans <code><a href='projects.html'>Projets</a></code> sur ce site !" data-vi="✈️ Từ một kỹ sư hàng không, tôi đã quyết định chuyển sang lĩnh vực Khoa học Dữ liệu & Kỹ thuật. Công việc gần đây nhất của tôi là <strong>Kỹ sư Dữ liệu/Nhà phát triển Phần mềm</strong> cho dự án <em>AIRBUS Skywise</em> nơi tôi có thể giúp công ty xây dựng các ứng dụng dữ liệu xuất sắc, truy cập và tận dụng nguồn dữ liệu khổng lồ, và tối ưu hóa các quy trình vận hành với phần mềm và công nghệ mới. Bên cạnh đó, tôi tự học Machine Learning, Deep Learning, đặc biệt là NLP và MLOps thông qua việc khám phá một số dự án cá nhân mà bạn có thể tìm thấy trong <code><a href='projects.html'>Dự án</a></code> trên trang web này!">✈️ From an aviation engineer, I made a decision to switch into the Data Science & Engineering field. My most recent job has been a <strong>Data Engineer/Software Developer</strong> for <em>AIRBUS Skywise</em> project where I can help the company build excellent data applications, access and leverage the massive data source, and optimize operating processes with new software and technologies. Besides, I am self-taught in Machine Learning, Deep Learning, especially in NLP and MLOps by exploring some personal projects that you can find in <code><a href="projects.html">Projects</a></code> on this site!</p>
+						<p data-en="📸 Apart from academic pursuit, I love Arsenal, League of Legends, Pokémon, travelling, and running, yet my biggest passion has always been <strong>photography</strong> which you can have a look at my <code><a href='gallery.html'>Gallery</a></code>. Experience plays a pivotal role in my philosophy, so I am constantly learning everything that makes me interested." data-fr="📸 En dehors de la poursuite académique, j'aime Arsenal, League of Legends, Pokémon, voyager et courir, mais ma plus grande passion a toujours été la <strong>photographie</strong> que vous pouvez regarder dans ma <code><a href='gallery.html'>Galerie</a></code>. L'expérience joue un rôle central dans ma philosophie, donc j'apprends constamment tout ce qui m'intéresse." data-vi="📸 Ngoài việc theo đuổi học thuật, tôi yêu thích Arsenal, League of Legends, Pokémon, du lịch và chạy bộ, nhưng niềm đam mê lớn nhất của tôi luôn là <strong>nhiếp ảnh</strong> mà bạn có thể xem trong <code><a href='gallery.html'>Thư viện ảnh</a></code> của tôi. Kinh nghiệm đóng vai trò quan trọng trong triết lý của tôi, vì vậy tôi liên tục học hỏi mọi thứ khiến tôi quan tâm.">📸 Apart from academic pursuit, I love Arsenal, League of Legends, Pokémon, travelling, and running, yet my biggest passion has always been <strong>photography</strong> which you can have a look at my <code><a href="gallery.html">Gallery</a></code>. Experience plays a pivotal role in my philosophy, so I am constantly learning everything that makes me interested.</p>
+						<p data-en="Thank you for your time. Hope you have a good day!" data-fr="Merci pour votre temps. J'espère que vous passez une bonne journée !" data-vi="Cảm ơn bạn đã dành thời gian. Chúc bạn một ngày tốt lành!">Thank you for your time. Hope you have a good day!</p>
 			
 						<!--image slider start-->
 						<div class="slider">
@@ -196,6 +202,37 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<!-- Language Switching Script -->
+		<script>
+			function changeLanguage() {
+				const languageSelect = document.getElementById('language-select');
+				const selectedLanguage = languageSelect.value;
+				
+				// Get all elements with data attributes for different languages
+				const elements = document.querySelectorAll('[data-en], [data-fr], [data-vi]');
+				
+				elements.forEach(element => {
+					const text = element.getAttribute(`data-${selectedLanguage}`);
+					if (text) {
+						// Always use innerHTML to preserve HTML tags like <strong>, <em>, <code>, <a>
+						element.innerHTML = text;
+					}
+				});
+				
+				// Store the selected language in localStorage
+				localStorage.setItem('selectedLanguage', selectedLanguage);
+			}
+			
+			// Load saved language preference on page load
+			document.addEventListener('DOMContentLoaded', function() {
+				const savedLanguage = localStorage.getItem('selectedLanguage');
+				if (savedLanguage) {
+					document.getElementById('language-select').value = savedLanguage;
+					changeLanguage();
+				}
+			});
+		</script>
 
 	</body>
 </html>
