@@ -10,7 +10,7 @@
 		<link rel="icon" type="image" href="images/plane.png">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main2.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
 		<!-- Google tag (gtag.js) -->
@@ -30,10 +30,10 @@
 			<div id="wrapper" class="fade-in">
 				
 				<div id="intro">
-					<h1>Bonjour! Je m'appelle <br> Viet-Thai Nguyen</h1>
-					<p><h3>Just a place for keeping the passion of youth</h3></p>
+					<h1 data-en="Hello I am <br> Viet-Thai Nguyen" data-fr="Bonjour! Je m'appelle <br> Viet-Thai Nguyen" data-vi="Xin chào! <br> mình là Thái">Hello I am <br> Viet-Thai Nguyen</h1>
+					<p><h3 data-en="Just a place for keeping the passion of youth" data-fr="Juste un endroit pour garder la passion de la jeunesse" data-vi="Một chỗ nào đó để gìn giữ đam mê tuổi trẻ">Just a place for keeping the passion of youth</h3></p>
 					<ul class="actions">
-						<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly" data-en="Continue" data-fr="Continuer" data-vi="Tiếp tục">Continue</a></li>
 					</ul>
 				</div>
 
@@ -47,15 +47,22 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li><a href="index.html">About me</a></li>
-							<li><a href="profile.html">Profile</a></li>
-							<li><a href="projects.html">Projects</a></li>
-							<li class="active"><a href="gallery.html">Gallery</a></li>
+							<li><a href="index.html" data-en="About me" data-fr="À propos" data-vi="Giới thiệu">About me</a></li>
+							<li><a href="profile.html" data-en="Profile" data-fr="Profil" data-vi="Hồ sơ">Profile</a></li>
+							<li><a href="projects.html" data-en="Projects" data-fr="Projets" data-vi="Dự án">Projects</a></li>
+							<li class="active"><a href="gallery.html" data-en="Gallery" data-fr="Galerie" data-vi="Thư viện ảnh">Gallery</a></li>
 						</ul>
 						<ul class="icons">
 							<li><a href="https://github.com/nuvita97" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
 							<li><a href="https://www.linkedin.com/in/vietthai2303" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">Linkedin</span></a></li>
 							<li><a href="https://www.instagram.com/nuvitaaaaaa" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+							<li class="language-selector">
+								<select id="language-select" onchange="changeLanguage()">
+									<option value="en" selected>English</option>
+									<option value="fr">Français</option>
+									<option value="vi">Tiếng Việt</option>
+								</select>
+							</li>
 						</ul>
 					</nav>
 
@@ -377,6 +384,37 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<!-- Language Switching Script -->
+		<script>
+			function changeLanguage() {
+				const languageSelect = document.getElementById('language-select');
+				const selectedLanguage = languageSelect.value;
+				
+				// Get all elements with data attributes for different languages
+				const elements = document.querySelectorAll('[data-en], [data-fr], [data-vi]');
+				
+				elements.forEach(element => {
+					const text = element.getAttribute(`data-${selectedLanguage}`);
+					if (text) {
+						// Always use innerHTML to preserve HTML tags like <strong>, <em>, <code>, <a>
+						element.innerHTML = text;
+					}
+				});
+				
+				// Store the selected language in localStorage
+				localStorage.setItem('selectedLanguage', selectedLanguage);
+			}
+			
+			// Load saved language preference on page load
+			document.addEventListener('DOMContentLoaded', function() {
+				const savedLanguage = localStorage.getItem('selectedLanguage');
+				if (savedLanguage) {
+					document.getElementById('language-select').value = savedLanguage;
+					changeLanguage();
+				}
+			});
+		</script>
 
 	</body>
 </html>

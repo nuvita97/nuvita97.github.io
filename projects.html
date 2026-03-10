@@ -31,10 +31,10 @@
 
 				<!-- Intro -->
 				<div id="intro">
-					<h1>Hello I am <br> Viet-Thai Nguyen</h1>
-					<p><h3>Welcome to my data playground</h3></p>
+					<h1 data-en="Hello I am <br> Viet-Thai Nguyen" data-fr="Bonjour! Je m'appelle <br> Viet-Thai Nguyen" data-vi="Xin chào! <br> mình là Thái">Hello I am <br> Viet-Thai Nguyen</h1>
+					<p><h3 data-en="Welcome to my data playground" data-fr="Bienvenue dans mon terrain de jeu de données" data-vi="Chỗ mình chơi với data">Welcome to my data playground</h3></p>
 					<ul class="actions">
-						<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly" data-en="Continue" data-fr="Continuer" data-vi="Tiếp tục">Continue</a></li>
 					</ul>
 				</div>
 
@@ -46,15 +46,22 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li><a href="index.html">About me</a></li>
-							<li><a href="profile.html">Profile</a></li>
-							<li class="active"><a href="projects.html">Projects</a></li>
-							<li><a href="gallery.html">Gallery</a></li>
+							<li><a href="index.html" data-en="About me" data-fr="À propos" data-vi="Giới thiệu">About me</a></li>
+							<li><a href="profile.html" data-en="Profile" data-fr="Profil" data-vi="Hồ sơ">Profile</a></li>
+							<li class="active"><a href="projects.html" data-en="Projects" data-fr="Projets" data-vi="Dự án">Projects</a></li>
+							<li><a href="gallery.html" data-en="Gallery" data-fr="Galerie" data-vi="Thư viện ảnh">Gallery</a></li>
 						</ul>
 						<ul class="icons">
 							<li><a href="https://github.com/nuvita97" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
 							<li><a href="https://www.linkedin.com/in/vietthai2303" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">Linkedin</span></a></li>
 							<li><a href="https://www.instagram.com/nuvitaaaaaa" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+							<li class="language-selector">
+								<select id="language-select" onchange="changeLanguage()">
+									<option value="en" selected>English</option>
+									<option value="fr">Français</option>
+									<option value="vi">Tiếng Việt</option>
+								</select>
+							</li>
 						</ul>
 					</nav>
 
@@ -279,28 +286,25 @@
 				</div>
 				
 				<footer id="footer">
-		
-					<section class="split contact">
-						<section class>
-							<h3>Address</h3>
-							<p><a>Massy (91300), France</a></p>						
-						</section>
-						<section>
-							<h3>Phone</h3>
-							<p><a>(+33) 7 80 79 27 49</a></p>
-						</section>
-						<section>
-							<h3>Email</h3>
-							<p><a>vietthai2303@gmail.com</a></p>
-						</section>
-						<section>
-							<h3>Social</h3>
+					<section class="connect-section">
+						<h3 data-en="Connect With Me" data-fr="Connectez-vous avec moi" data-vi="Kết nối với mình">Connect With Me</h3>
+						<div class="contact-info">
+							<p>
+								<strong data-en="Location:" data-fr="Lieu :" data-vi="Địa điểm:">Location:</strong> 
+								<span data-en="Bagneux (92220), France" data-fr="Bagneux (92220), France" data-vi="Bagneux (92220), Pháp">Bagneux (92220), France</span><br>
+								<strong data-en="Phone:" data-fr="Téléphone :" data-vi="Điện thoại:">Phone:</strong> 
+								<a href="tel:+33780792749" data-en="(+33) 7 80 79 27 49" data-fr="(+33) 7 80 79 27 49" data-vi="(+33) 7 80 79 27 49">(+33) 7 80 79 27 49</a><br>
+								<strong data-en="Email:" data-fr="Email :" data-vi="Email:">Email:</strong> 
+								<a href="mailto:vietthai2303@gmail.com" data-en="vietthai2303@gmail.com" data-fr="vietthai2303@gmail.com" data-vi="vietthai2303@gmail.com">vietthai2303@gmail.com</a>
+							</p>
+						</div>
+						<div class="social-links">
 							<ul class="icons alt">
 								<li><a href="https://github.com/nuvita97" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
 								<li><a href="https://www.linkedin.com/in/vietthai2303" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">Linkedin</span></a></li>
 								<li><a href="https://www.instagram.com/nuvitaaaaaa" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
 							</ul>
-						</section>
+						</div>
 					</section>
 				</footer>
 		
@@ -314,6 +318,37 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<!-- Language Switching Script -->
+		<script>
+			function changeLanguage() {
+				const languageSelect = document.getElementById('language-select');
+				const selectedLanguage = languageSelect.value;
+				
+				// Get all elements with data attributes for different languages
+				const elements = document.querySelectorAll('[data-en], [data-fr], [data-vi]');
+				
+				elements.forEach(element => {
+					const text = element.getAttribute(`data-${selectedLanguage}`);
+					if (text) {
+						// Always use innerHTML to preserve HTML tags like <strong>, <em>, <code>, <a>
+						element.innerHTML = text;
+					}
+				});
+				
+				// Store the selected language in localStorage
+				localStorage.setItem('selectedLanguage', selectedLanguage);
+			}
+			
+			// Load saved language preference on page load
+			document.addEventListener('DOMContentLoaded', function() {
+				const savedLanguage = localStorage.getItem('selectedLanguage');
+				if (savedLanguage) {
+					document.getElementById('language-select').value = savedLanguage;
+					changeLanguage();
+				}
+			});
+		</script>
 
 	</body>
 </html>
