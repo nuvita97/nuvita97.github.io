@@ -23,6 +23,33 @@
 		</script>
 		<!-- End Google tag -->
 
+		<style>
+			#fle-featured h2,
+			#fle-featured p,
+			#fle-featured b,
+			#fle-featured em { color: #ffffff !important; }
+			#fle-featured .tag {
+				background-color: rgba(255,255,255,0.15);
+				color: #ffffff;
+				border: 1px solid rgba(255,255,255,0.35);
+			}
+			#fle-featured .button {
+				color: #ffffff !important;
+				box-shadow: inset 0 0 0 2px #ffffff !important;
+			}
+			#fle-featured .button:hover {
+				color: #18bfef !important;
+				box-shadow: inset 0 0 0 2px #18bfef !important;
+			}
+			#fle-featured .button.primary {
+				background-color: #18bfef !important;
+				color: #ffffff !important;
+				box-shadow: none !important;
+			}
+			#fle-featured .button.primary:hover {
+				background-color: #0fa8d8 !important;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -67,6 +94,29 @@
 
 				<!-- Main -->
 					<div id="main">
+
+						<!-- Featured Project -->
+						<section id="fle-featured" class="post featured" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('images/fle-agent.jpeg'); background-size: cover; background-position: center; color: #fff;">
+							<header>
+								<h2>🇫🇷 FLE Agent — French AI Exercises</h2>
+							</header>
+							<div class="tags">
+								<span class="tag">Claude API</span>
+								<span class="tag">Flask</span>
+								<span class="tag">Supabase</span>
+								<span class="tag">fpdf2</span>
+								<span class="tag">DuckDuckGo</span>
+								<span class="tag">Render</span>
+								<span class="tag">WAT Framework</span>
+							</div>
+							<p>Choose a CEFR level (A1–C1) and a topic, then practice reading a real French article. Answer 5 multiple-choice comprehension questions to validate your understanding, and review a curated vocabulary checklist with French definitions and English translations. All exercises can be downloaded as a formatted PDF. Subscribe for a weekly newsletter to keep up a regular practice habit.</p>
+							<p>Built with <b>Python</b> and <b>Flask</b>, powered by the <b>Claude API</b> to generate fresh reading exercises, questions, and vocabulary on demand. A <b>DuckDuckGo</b> search agent retrieves real French articles matching the chosen level and topic, <b>fpdf2</b> handles in-memory PDF generation, and subscribers are stored in <b>Supabase</b> (PostgreSQL). Deployed on <b>Render</b>, following the <b>WAT framework</b> (Workflows → Agent → Tools).</p>
+							<ul class="actions special">
+								<li><a href="https://fle-agent.onrender.com" class="button primary large" target="_blank" rel="noopener noreferrer">Open App &#8594;</a></li>
+								<li><a href="https://github.com/nuvita97/fle-agent" class="button large" target="_blank" rel="noopener noreferrer">View Code</a></li>
+							</ul>
+							<p><em>Free hosting — app may take ~30 sec to wake up if idle.</em></p>
+						</section>
 
 						<!-- Posts -->
 						<section class="posts">
