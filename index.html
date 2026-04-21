@@ -18,6 +18,8 @@
 			</script>
 	    <!-- End Google Analytics -->
 
+		<!-- Twemoji: consistent emoji rendering across platforms (fixes flag emojis on Windows) -->
+		<script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" crossorigin="anonymous"></script>
 	</head>
 	<body class="is-preload">
 
@@ -246,6 +248,13 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<!-- Parse emojis into cross-platform SVGs -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				twemoji.parse(document.body, { folder: 'svg', ext: '.svg' });
+			});
+		</script>
 
 		<!-- Language Switching Script -->
 		<script>
