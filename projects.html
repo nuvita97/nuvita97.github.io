@@ -23,6 +23,12 @@
 		</script>
 		<!-- End Google tag -->
 
+		<!-- Twemoji: fixes flag emojis on Windows -->
+		<script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" crossorigin="anonymous"></script>
+		<style>
+			img.emoji { height: 1em; width: auto; margin: 0 0.05em 0 0.1em; vertical-align: -0.1em; display: inline; }
+		</style>
+
 		<style>
 			#fle-featured h2,
 			#fle-featured p,
@@ -389,6 +395,12 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				twemoji.parse(document.body, { folder: 'svg', ext: '.svg' });
+			});
+		</script>
 
 		<!-- Language Switching Script -->
 		<script>

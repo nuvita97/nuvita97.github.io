@@ -18,8 +18,11 @@
 			</script>
 	    <!-- End Google Analytics -->
 
-		<!-- Twemoji: consistent emoji rendering across platforms (fixes flag emojis on Windows) -->
+		<!-- Twemoji: fixes flag emojis on Windows -->
 		<script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" crossorigin="anonymous"></script>
+		<style>
+			img.emoji { height: 1em; width: auto; margin: 0 0.05em 0 0.1em; vertical-align: -0.1em; display: inline; }
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -272,7 +275,9 @@
 						element.innerHTML = text;
 					}
 				});
-				
+
+				twemoji.parse(document.body, { folder: 'svg', ext: '.svg' });
+
 				// Store the selected language in localStorage
 				localStorage.setItem('selectedLanguage', selectedLanguage);
 			}
