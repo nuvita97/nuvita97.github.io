@@ -4951,6 +4951,34 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
     	max-height: 100%; */
   width: 600px;
   height: 750px;
+  object-fit: cover;
+}
+
+.slide {
+  position: relative;
+  height: 750px;
+}
+
+.slide-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 2.5em 1.25em 3.5em;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+.slide-caption-title {
+  font-family: "Ms Madi", cursive;
+  font-weight: 400;
+  font-size: 1.8em;
+  line-height: 1.2;
+  text-align: right;
 }
 
 /*css for manual slide navigation*/
