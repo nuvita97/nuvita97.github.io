@@ -5129,26 +5129,49 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   transform: scale(1.5);
 }
 
-.gallery-item .text {
-  opacity: 0;
+.gallery-item .caption {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.25em 1em;
+  padding: 2.5em 1em 0.75em;
   color: #fff;
-  font-size: 25px;
+  font-size: 0.85em;
+  line-height: 1.4;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
   pointer-events: none;
   z-index: 4;
-  transition: 0.3s ease-in-out;
-  -webkit-backdrop-filter: blur(5px) saturate(1.8);
-  backdrop-filter: blur(5px) saturate(1.8);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.gallery-item:hover .text {
+.gallery-item:hover .caption {
   opacity: 1;
-  animation: move-down 0.3s linear;
-  padding: 1em;
-  width: 100%;
+  transform: translateY(0);
+}
+
+.gallery-item .caption .location:before {
+  margin-right: 0.4em;
+}
+
+.gallery-item .caption .year {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Touch screens have no hover, so keep captions visible */
+@media (hover: none) {
+  .gallery-item .caption {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .w-1 {
@@ -5200,18 +5223,6 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   .w-5,
   .w-6 {
     grid-column: span 1;
-  }
-}
-
-@keyframes move-down {
-  0% {
-    top: 10%;
-  }
-  50% {
-    top: 35%;
-  }
-  100% {
-    top: 50%;
   }
 }
 
