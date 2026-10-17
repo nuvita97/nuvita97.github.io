@@ -136,13 +136,6 @@
 		<!-- Gallery Script: photos and captions come from assets/js/gallery-data.js -->
 		<script src="assets/js/gallery-data.js"></script>
 		<script>
-			// Tile sizes, repeated in order across all photos
-			const GALLERY_LAYOUT = [
-				'w-3 h-2', 'w-3 h-3', 'h-2', 'w-2 h-2', 'w-2 h-1', 'w-1 h-3',
-				'w-2 h-3', 'w-3 h-2', 'w-1 h-3', 'w-3 h-2', 'h-4', 'w-1 h-2',
-				'w-1 h-3', 'w-2 h-3', 'w-2 h-2', 'w-5 h-1', 'w-1 h-1'
-			];
-
 			function buildCaption(photo) {
 				if (!photo.location && !photo.year) return null;
 
@@ -165,9 +158,9 @@
 			}
 
 			const gallery = document.getElementById('gallery');
-			GALLERY_PHOTOS.forEach(function(photo, index) {
+			GALLERY_PHOTOS.forEach(function(photo) {
 				const container = document.createElement('div');
-				container.className = 'gallery-container ' + GALLERY_LAYOUT[index % GALLERY_LAYOUT.length];
+				container.className = 'gallery-container ' + (photo.size || 'w-1 h-2');
 
 				const item = document.createElement('div');
 				item.className = 'gallery-item';
