@@ -153,12 +153,20 @@
 							<input type="radio" name="radio-btn" id="radio8">
 							<input type="radio" name="radio-btn" id="radio9">
 							<input type="radio" name="radio-btn" id="radio10">
+							<input type="radio" name="radio-btn" id="radio11">
+							<input type="radio" name="radio-btn" id="radio12">
 							<!--radio buttons end-->
 							<!--slide images start-->
 							<div class="slide first">
 								<img src="images/slide_eiffel.jpg" alt="Tour Eiffel">
 								<div class="slide-caption">
 									<span class="slide-caption-title">Tour Eiffel</span>
+								</div>
+							</div>
+							<div class="slide">
+								<img src="images/slide_grad.jpg" alt="Remise des diplômes">
+								<div class="slide-caption">
+									<span class="slide-caption-title">Remise des diplômes</span>
 								</div>
 							</div>
 							<div class="slide">
@@ -174,12 +182,6 @@
 								</div>
 							</div>
 							<div class="slide">
-								<img src="images/slide_interlaken.JPG" alt="Interlaken">
-								<div class="slide-caption">
-									<span class="slide-caption-title">Interlaken</span>
-								</div>
-							</div>
-							<div class="slide">
 								<img src="images/slide_orangerie.jpg" alt="Musée de l&#x27;Orangerie">
 								<div class="slide-caption">
 									<span class="slide-caption-title">Musée de l&#x27;Orangerie</span>
@@ -192,9 +194,21 @@
 								</div>
 							</div>
 							<div class="slide">
+								<img src="images/slide_interlaken.JPG" alt="Interlaken">
+								<div class="slide-caption">
+									<span class="slide-caption-title">Interlaken</span>
+								</div>
+							</div>
+							<div class="slide">
 								<img src="images/slide_lille.jpg" alt="Lille">
 								<div class="slide-caption">
 									<span class="slide-caption-title">Lille</span>
+								</div>
+							</div>
+							<div class="slide">
+								<img src="images/slide_vienna.jpg" alt="Vienna">
+								<div class="slide-caption">
+									<span class="slide-caption-title">Vienna</span>
 								</div>
 							</div>
 							<div class="slide">
@@ -228,6 +242,8 @@
 								<div class="auto-btn8"></div>
 								<div class="auto-btn9"></div>
 								<div class="auto-btn10"></div>
+								<div class="auto-btn11"></div>
+								<div class="auto-btn12"></div>
 							</div>
 							<!--automatic navigation end-->
 							</div>
@@ -243,6 +259,8 @@
 								<label for="radio8" class="manual-btn"></label>
 								<label for="radio9" class="manual-btn"></label>
 								<label for="radio10" class="manual-btn"></label>
+								<label for="radio11" class="manual-btn"></label>
+								<label for="radio12" class="manual-btn"></label>
 							</div>
 							<!--manual navigation end-->
 						</div>
@@ -250,13 +268,23 @@
 					
 						<script type="text/javascript">
 						var counter = 1;
-						setInterval(function(){
+						var totalSlides = 12;
+						function nextSlide(){
 							document.getElementById('radio' + counter).checked = true;
 							counter++;
-							if(counter > 10){
+							if(counter > totalSlides){
 								counter = 1;
 							}
-						}, 4000);
+						}
+						var timer = setInterval(nextSlide, 4000);
+						// When a photo is chosen manually, continue sliding from that photo
+						for(var i = 1; i <= totalSlides; i++){
+							document.getElementById('radio' + i).addEventListener('change', function(){
+								counter = parseInt(this.id.replace('radio', '')) % totalSlides + 1;
+								clearInterval(timer);
+								timer = setInterval(nextSlide, 4000);
+							});
+						}
 						</script>
 						
 					</section>

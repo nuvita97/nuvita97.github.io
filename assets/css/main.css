@@ -4929,6 +4929,8 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
+  /* Lets captions size relative to the slider width (cqw units) */
+  container-type: inline-size;
 }
 
 .slides {
@@ -4966,6 +4968,9 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   bottom: 0;
   display: flex;
   justify-content: flex-end;
+  /* Scale with the image, not the page font size: 16px at a 600px slider */
+  font-size: 16px;
+  font-size: 2.6667cqw;
   padding: 2.5em 1.25em 3.5em;
   color: #fff;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
@@ -5002,7 +5007,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 }
 
 .manual-btn:not(:last-child) {
-  margin-right: 40px;
+  margin-right: 30px;
 }
 
 .manual-btn:hover {
@@ -5049,6 +5054,14 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 #radio10:checked ~ .first {
   margin-left: -180%;
 }
+
+#radio11:checked ~ .first {
+  margin-left: -200%;
+}
+
+#radio12:checked ~ .first {
+  margin-left: -220%;
+}
 /* END TEST */
 
 /*css for automatic navigation*/
@@ -5071,7 +5084,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 }
 
 .navigation-auto div:not(:last-child) {
-  margin-right: 40px;
+  margin-right: 30px;
 }
 
 #radio1:checked ~ .navigation-auto .auto-btn1 {
@@ -5112,6 +5125,14 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 }
 
 #radio10:checked ~ .navigation-auto .auto-btn10 {
+  background: #40d3dc;
+}
+
+#radio11:checked ~ .navigation-auto .auto-btn11 {
+  background: #40d3dc;
+}
+
+#radio12:checked ~ .navigation-auto .auto-btn12 {
   background: #40d3dc;
 }
 /* END TEST */
